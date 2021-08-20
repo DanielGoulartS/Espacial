@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            ul{width: 160px;
+               heigh:160px;
+            }
+            li{ width: 50px;
+                height:50px;
+                background-color:gray;
+                float: left;
+                list-style: none;
+                text-align: center;
+                border: 1px solid black;
+            }
+            li:hover{
+                background-color:lightgray;
+            }
+        </style>
+        <script>
+            var onoff = true;
+            var turno = 'X';
+            var tabuleiro = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']];
+            var telaTabuleiro = [[document.getElementById('casa1'), document.getElementById('casa2'), document.getElementById('casa3')],
+                [document.getElementById('casa4'), document.getElementById('casa5'), document.getElementById('casa6')],
+                [document.getElementById('casa7'), document.getElementById('casa8'), document.getElementById('casa9')]];
+
+            function reinicia() {
+                onoff = true;
+                tabuleiro = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']];
+                telaTabuleiro = [[document.getElementById('casa1'), document.getElementById('casa2'), document.getElementById('casa3')],
+                    [document.getElementById('casa4'), document.getElementById('casa5'), document.getElementById('casa6')],
+                    [document.getElementById('casa7'), document.getElementById('casa8'), document.getElementById('casa9')]];
+                for (var i = 0; i < 3; i++) {
+                    for (var j = 0; j < 3; j++) {
+                        telaTabuleiro[i][j].innerHTML = tabuleiro[i][j];
+                    }
+                }
+                if (turno == 'O') {
+                    joga(1);
+                }
+            }
+            function condDeVitoria() {
+                for (var i = 0; i < 3; i++) {
+                    if ((tabuleiro[i][0] == tabuleiro[i][1]) && (tabuleiro[i][1] == tabuleiro[i][2])) {
+                        return true;
+                    }
+                }
+                for (var i = 0; i < 3; i++) {
+                    if ((tabuleiro[0][i] == tabuleiro[1][i]) && (tabuleiro[1][i] == tabuleiro[2][i])) {
+                        return true;
+                    }
+                }
+                if ((tabuleiro[0][0] == tabuleiro[1][1]) && (tabuleiro[1][1] == tabuleiro[2][2])) {
+                    return true;
+                }
+                if ((tabuleiro[0][2] == tabuleiro [1][1]) && (tabuleiro[1][1] == tabuleiro[2][0])) {
+                    return true;
+                }
+                return false;
+            }
+            function mudaturno() {
+                if (turno == 'X') {
+                    turno = 'O';
+                } else {
+                    turno = 'X';
+                }
+            }
+            function tabCheio() {
+                for (var i = 0; i < 3; i++) {
+                    for (var j = 0; j < 3; j++) {
+                        if (tabuleiro[i][j] == '') {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+            function joga(posicao) {
+                if (onoff) {
+                    if (turno == 'X') {
+                        for (var i = 0; i < 3; i++) {
+                            for (var j = 0; j < 3; j++) {
+                                if ((tabuleiro[i][j] == posicao)) {
+                                    tabuleiro[i][j] = turno;
+                                    telaTabuleiro[i][j].innerHTML = tabuleiro[i][j];
+                                    mudaturno();
+                                    var jogador = 'X';
+                                }
+                            }
+                        }
+                    } else if (turno == 'O') {
+                        do {
+                            var num1 = Math.floor(Math.random() * 3);
+                            var num2 = Math.floor(Math.random() * 3);
+                            if ((tabuleiro[num1][num2] != 'X') && (tabuleiro[num1][num2] != 'O')) {
+                                tabuleiro[num1][num2] = turno;
+                                telaTabuleiro[num1][num2].innerHTML = tabuleiro[num1][num2];
+                                mudaturno();
+                                var jogador = 'O';
+                            }
+                        } while (tabuleiro[num1][num2] != 'O');
+                    }
+                    if (condDeVitoria() && onoff) {
+                        window.alert(jogador + ' venceu!');
+                        onoff = false;
+                    }
+                    if (turno == 'O') {
+                        joga(1);
+                    }
+                }
+            }
+            window.addEventListener('load', reinicia);
+        </script>
+    </head>
+    <body><h1>Jogo da Velha</h1>
+        <h3>Jogando</h3>
+        <ul>
+            <li id='casa1' onclick='joga(1)' >1</li>
+            <li id='casa2' onclick='joga(2)' >2</li>
+            <li id='casa3' onclick='joga(3)' >3</li>
+            <li id='casa4' onclick='joga(4)' >4</li>
+            <li id='casa5' onclick='joga(5)' >5</li>
+            <li id='casa6' onclick='joga(6)' >6</li>
+            <li id='casa7' onclick='joga(7)' >7</li>
+            <li id='casa8' onclick='joga(8)' >8</li>
+            <li id='casa9' onclick='joga(9)' >9</li>
+        </ul>
+        <input id='btn' type='button' value='restart' onclick='reinicia()'>
+    </body>
+</html>
