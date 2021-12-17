@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
-echo 'Category';
+//echo 'Category';
 if($_GET['categ']){  //PAGINA DE CATEGORIA
     $categ = $_GET['categ'];
             
