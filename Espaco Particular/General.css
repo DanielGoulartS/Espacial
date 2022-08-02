@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+*{
+    /*Variaveis*/
+    --blue1:rgb(8, 30, 92);
+    --bluelight:rgba(9, 147, 222 ,1);
+    --bluetitle:rgba(9, 147, 222 ,0.7);
+    --bluebody:rgba(12, 108, 235, 0.3);
+    --darkred:darkred;
+    --grayback:rgb(20, 20, 20);
+    --blacktransp1:rgba(0,0,0,0.8);
+    --blacktransp2:rgba(0,0,0,0.5);
+
+
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Courier Prime', monospace;
+    text-decoration: none;
+}
+@media only screen and (max-width: 1000px){
+    *{
+        font-size:30px;
+    }
+}
+body{
+    background-size: cover;
+    background: rgb(6, 10, 43);
+}
+#warning{
+    background-color: transparent;
+    font-size: 200%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    color: darkgoldenrod;
+}
+
+#header #logoDiv{
+    height: 590px;
+    position: relative;
+    background: linear-gradient(transparent, transparent, black);
+    display: flex;
+}
+#header #logoDiv img{
+    margin: auto;
+    width: 25%;
+    min-width: 350px;
+    max-width: 600px;
+}
+#fundo{
+    background: linear-gradient(to left, black 0%, transparent 20%, transparent 80%, black 95%),
+        url("/Images/Space1.jpg");
+    width: 100%;
+    height: 37%;
+    max-height: 700px;
+    position: absolute;
+    background-size: cover;
+    animation: destaque 40s infinite linear alternate;
+}
+@media only screen and (min-width: 1000px){
+    #fundo{
+        height: 100%;
+        max-height: 100%;
+        position: fixed;
+    }
+}
+/*Fundo*/
+
+@keyframes destaque{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 200px;
+    }
+}
+
+
+
+/*Menu1*/
+#ulMenu{
+    background: black;
+    list-style: none;
+    justify-content: center;
+    display: flex;
+}
+@media only screen and (max-width: 1000px){
+    #ulMenu a li{
+        font-size: 1.5em;
+        text-align: left;
+        padding: 30px;
+        line-height: 70px;
+        margin: auto;
+    }
+}
+#ulMenu a li{
+    left: -10px;
+    line-height: 20px;
+    padding: 10px;
+    border-bottom: solid 10px transparent;
+}
+#ulMenu a li:hover{
+    transition:0.5s;
+    background: var(--bluelight);
+    text-decoration: line-through;
+}
+#ulMenu a li{
+    color: white;
+    text-decoration: none;
+}
+#ulMenu input{
+    float: right;
+}
+#ulMenu #submitButton{
+    height: 38px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: var(--blue1);
+    border: 1px solid white;
+    color: white;
+}
+#ulMenu #submitButton:hover{
+    background-color: var(--bluelight);
+    transition: 0.3s;
+    text-decoration: line-through;
+    animation-name: buttonAnimation;
+    animation-duration: 0.6s; /*Animação na Seção Menu2 abaixo*/
+    animation-direction: reverse;
+}
+#ulMenu #txtBox{
+    height: 36px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: var(--blue1);
+    border: 1px solid white;
+    font-size: 14px;
+    color: white;
+}
+
+
+/*Menu2*/
+#ulMenu2{
+    list-style: none;
+    height: 100%;
+    line-height: 90px;
+    justify-content: center;
+    display: flex;
+    background-color: var(--blue1);
+}
+#ulMenu2 a {
+    margin: 0px;
+    width:120%;
+}
+#ulMenu2 a li{
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+#ulMenu2 a li:hover{
+    transition: 0.5s;
+    background-color: var(--bluelight);
+    text-decoration: line-through;
+    animation-name: buttonAnimation;
+    animation-duration: 1s;
+}
+@media only screen and (max-width: 1000px){
+    #ulMenu2 a li{
+        font-size: 1.1em;
+        text-align: left;
+        padding: 30px;
+        line-height: 70px;
+        margin: auto;
+    }
+}
+@keyframes buttonAnimation{
+    5%{
+        background:lightskyblue;
+    }
+    10%{
+        background:black;
+    }
+    20%{
+        background:white
+    }
+    40%{
+        background:lightskyblue;
+    }
+    100%{
+        background: var(--bluelight);
+    }
+}
+
+/*Home*/
+#ulFeed{
+    list-style: none;
+    min-width: 400px;
+    min-height: 20em;
+    max-width: 70%;
+    margin: auto;
+    background: var(--grayback);
+    padding: 0px;
+}
+#homePost{
+    background-color: transparent;
+    color: white;
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid white;
+}
+#excluirPostBotao{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: darkgoldenrod;
+}
+@media(max-width: 700px){
+    #homePost{
+        width: 100%;
+    }
+}
+
+#homePost #titulo{
+    font-size: 1.5em;
+    text-align: center;
+    overflow: hidden;
+    background: var(--bluelight);
+}
+@media only screen and (max-width: 1000px){
+    #homePost #titulo{
+        font-size: 2em;
+    }
+}
+#homePost #trecho{
+    afont-size:0.8em;
+    background:linear-gradient(var(--bluebody), transparent);
+    max-height: 100px;
+    overflow: hidden;
+}
+@media only screen and (max-width: 1000px){
+    #homePost #trecho p{
+        font-size: 1.3em;
+        overflow: hidden;
+    }
+}
+#homePost #postId{
+    background:linear-gradient(transparent, var(--grayback) 25%);
+    text-align: right;
+    top: -10%;
+    height: 35%;
+}
+#homePost #botao{
+    color:white;
+    margin: auto;
+    text-align: center;
+    background: var(--blue1);
+    padding: 10px;
+}
+
+/*Paginador*/
+#ulPaginador{
+    background: var(--blue1);
+    display: flex;
+    list-style: none;
+    margin: auto;
+    justify-content: center;
+}
+#ulPaginador a li{
+    color: white;
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid white;
+}
+#ulPaginador a li:active{
+    background: var(--bluelight);
+}
+@media only screen and (max-width: 1000px){
+    #ulPaginador a li{
+        font-size: 1.2em;
+        padding: 10px;
+    }
+}
+/*SemiFooter*/
+#semifooter{
+    background:var(--blue1);
+    display: flex;
+}
+#semifooter a{
+    color: white;
+    padding: 10px;
+    margin: auto;
+}
+#semifooter a:hover{
+    text-decoration: line-through;
+}
+
+
+/*Login Formulário*/
+#loginForm div{
+    background: var(--blacktransp2);
+    color: white;
+    width: 20%;
+    padding: 10px;
+    margin: auto;
+}
+#loginForm input{
+    width:100%;
+    height: 20px;
+    margin-top: 10px;
+}
+#loginForm #submit{
+    width:auto;
+    height: auto;
+    color:white;
+    margin-top: 10px;
+    text-align: center;
+    background: var(--blue1);
+    padding: 10px;
+}
+#loginForm #submit:hover{
+    text-align: center;
+    text-decoration: line-through;
+    background: var(--blue1);
+    animation: buttonAnimation 0.6s;
+
+}
+#avisoLogin, #avisoLogin div{
+    color: yellow;
+    margin: auto;
+    background: var(--blacktransp2);
+    text-align: center;
+}
+/*Enviar, Atualizar*/
+#abaEnviar, #abaAtualizar{
+    width: 100%;
+    height: 60%;
+    left: -95%;
+    top: 20%;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    position: fixed;
+    background: var(--blue1);
+    z-index: 2;
+}
+#abaEnviar:hover, #abaAtualizar:hover{
+    left: -5%;
+    transition: ease-in-out 0.2s;
+}
+#abaEnviar *, #abaAtualizar *{
+    width: 90%;
+    height: 30%;
+    margin: auto;
+    display: list-item;
+    list-style: none;
+}
+#abaEnviar #enviarCorpo, #abaAtualizar #atualizarCorpo{
+    height: 110%;
+    font-size: 0.7em;
+}
+#abaEnviar p, #abaAtualizar p{
+    text-align: right;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    right: -10%;
+    top: 110%;
+    color:white;
+}
+
+/*Pagina de Post*/
+#materiaTitulo{
+    font-size: 3em;
+}
+#materia{
+    width: 70%;
+    min-height: 20em;
+    margin: auto;
+    padding: 2%;
+    background: var(--grayback);
+    color: white;
+    text-align: center;
+}
+#materia .subtitulo{
+    text-align: center;
+    font-size: 2em;
+    margin-top:1em;
+}
+#materia .paragrafo{
+    text-align: justify;
+    text-indent:2em;
+}
+#materia .imagem{
+    border: 1px solid gray;
+    margin:auto;
+    max-width: 500px;
+    max-height: 500px;
+}
+/*Footer*/
+#footerdiv{
+    width: 100%;
+    height: 100px;
+    text-align: right;
+    background: linear-gradient(var(--bluetitle), black);
+    position: absolute;
+}
