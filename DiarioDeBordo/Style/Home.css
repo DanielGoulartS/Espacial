@@ -1,0 +1,132 @@
+
+/*Home*/
+#ulFeed{
+    list-style: none;
+    min-width: 400px;
+    min-height: 20em;
+    max-width: 70%;
+    margin: auto;
+    background: var(--grayback);
+    padding: 0px;
+}
+#homePost{
+    background-color: transparent;
+    color: white;
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid white;
+}
+#excluirPostBotao{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: darkgoldenrod;
+}
+@media(max-width: 700px){
+    #homePost{
+        width: 100%;
+    }
+}
+
+#homePost #titulo{
+    font-size: 1.5em;
+    text-align: center;
+    overflow: hidden;
+    background: var(--bluelight);
+}
+@media only screen and (max-width: 1000px){
+    #homePost #titulo{
+        font-size: 2em;
+    }
+}
+#homePost #trecho{
+    background:linear-gradient(var(--bluebody), transparent);
+    max-height: 100px;
+    overflow: hidden;
+}
+#homePost .imagem{
+    margin: auto;
+    display: flex;
+    max-width: 50%;
+    max-height: 50%;
+}
+@media only screen and (max-width: 1000px){
+    #homePost #trecho p{
+        font-size: 1.3em;
+        overflow: hidden;
+    }
+}
+#homePost #postId{
+    background:linear-gradient(transparent, var(--grayback) 25%);
+    text-align: right;
+    top: -10%;
+    height: 35%;
+}
+#homePost #botao{
+    color:white;
+    margin: auto;
+    text-align: center;
+    background: var(--blue1);
+    padding: 10px;
+}
+
+/*Paginador*/
+#ulPaginador{
+    background: var(--blue1);
+    display: flex;
+    list-style: none;
+    margin: auto;
+    justify-content: center;
+}
+#ulPaginador a li{
+    color: white;
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid white;
+}
+#ulPaginador a li:active{
+    background: var(--bluelight);
+}
+@media only screen and (max-width: 1000px){
+    #ulPaginador a li{
+        font-size: 1.2em;
+        padding: 10px;
+    }
+}
+
+/*Enviar, Atualizar*/
+#abaEnviar, #abaAtualizar{
+    width: 100%;
+    height: 60%;
+    left: -95%;
+    top: 20%;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    position: fixed;
+    background: var(--blue1);
+    z-index: 2;
+}
+#abaEnviar:hover, #abaAtualizar:hover{
+    left: -5%;
+    transition: ease-in-out 0.2s;
+}
+#abaEnviar *, #abaAtualizar *{
+    width: 90%;
+    height: 30%;
+    margin: auto;
+    display: list-item;
+    list-style: none;
+}
+#abaEnviar #enviarCorpo, #abaAtualizar #atualizarCorpo{
+    height: 110%;
+    font-size: 0.7em;
+}
+#abaEnviar p, #abaAtualizar p{
+    text-align: right;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    right: -10%;
+    top: 110%;
+    color:white;
+}
+

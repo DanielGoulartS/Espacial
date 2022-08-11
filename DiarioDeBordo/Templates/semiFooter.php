@@ -1,0 +1,1 @@
+<?php echo "<div id='semifooter'><br><a id='back' href=\"javascript:history.go(-1)\">Voltar</a></div>";?>

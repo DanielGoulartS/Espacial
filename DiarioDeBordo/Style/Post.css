@@ -1,0 +1,63 @@
+/*Pagina de Post*/
+#materiaTitulo{
+    font-size: 3em;
+}
+#materia{
+    width: 70%;
+    margin: auto;
+    padding: 2%;
+    background: var(--grayback);
+    color: white;
+    text-align: center;
+}
+#materia .subtitulo{
+    text-align: center;
+    font-size: 2em;
+    margin-top:1em;
+}
+#materia .paragrafo{
+    text-align: justify;
+    text-indent:2em;
+}
+#materia .imagem{
+    border: 1px solid gray;
+    margin:auto;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+/*Enviar, Atualizar*/
+#abaEnviar, #abaAtualizar{
+    width: 100%;
+    height: 60%;
+    left: -95%;
+    top: 20%;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    position: fixed;
+    background: var(--blue1);
+    z-index: 2;
+}
+#abaEnviar:hover, #abaAtualizar:hover{
+    left: -5%;
+    transition: ease-in-out 0.2s;
+}
+#abaEnviar *, #abaAtualizar *{
+    width: 90%;
+    height: 30%;
+    margin: auto;
+    display: list-item;
+    list-style: none;
+}
+#abaEnviar #enviarCorpo, #abaAtualizar #atualizarCorpo{
+    height: 110%;
+    font-size: 0.7em;
+}
+#abaEnviar p, #abaAtualizar p{
+    text-align: right;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    right: -10%;
+    top: 110%;
+    color:white;
+}

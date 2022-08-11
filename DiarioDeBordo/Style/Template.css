@@ -1,0 +1,224 @@
+/*Header*/
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+*{
+    /*Variaveis*/
+    --blue1:rgb(8, 30, 92);
+    --bluelight:rgba(9, 147, 222 ,1);
+    --bluetitle:rgba(9, 147, 222 ,0.7);
+    --bluebody:rgba(12, 108, 235, 0.3);
+    --darkred:darkred;
+    --grayback:rgb(20, 20, 20);
+    --blacktransp1:rgba(0,0,0,0.8);
+    --blacktransp2:rgba(0,0,0,0.5);
+
+
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Courier Prime', monospace;
+    text-decoration: none;
+}
+@media only screen and (max-width: 1000px){
+    *{
+        font-size:30px;
+    }
+}
+body{
+    background-size: cover;
+    background: rgb(6, 10, 43);
+}
+#warning{
+    background-color: transparent;
+    font-size: 200%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    color: darkgoldenrod;
+}
+#header #logoDiv{
+    height: 500px;
+    background: linear-gradient(transparent, transparent, black);
+    display: flex;
+}
+#header #logoDiv img{
+    margin: auto;
+    min-width: 350px;
+    max-width: 600px;
+}
+#fundo{
+    background: linear-gradient(to left, black 0%, transparent 20%, transparent 80%, black 95%),
+        url("/Images/Space1.jpg");
+    width: 100%;
+    height: 37%;
+    max-height: 700px;
+    position: absolute;
+    background-size: cover;
+    animation: destaque 40s infinite linear alternate;
+}
+@media only screen and (min-width: 1000px){
+    #fundo{
+        height: 100%;
+        max-height: 100%;
+        position: fixed;
+    }
+}
+
+/*Fundo*/
+@keyframes destaque{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 200px;
+    }
+}
+
+
+
+/*Menu1*/
+#ulMenu{
+    background: black;
+    list-style: none;
+    justify-content: center;
+    display: flex;
+}
+.pesquisar{
+    margin-bottom: 1%;
+    background-color: var(--blue1);
+    border: 1px solid white;
+    float: right;
+}
+#ulMenu #submitButton{
+    min-width: 200px;
+    height: 38px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    color: white;
+}
+#ulMenu #submitButton:hover{
+    background-color: var(--bluelight);
+    transition: 0.3s;
+    text-decoration: line-through;
+    animation-name: buttonAnimation;
+    animation-duration: 0.6s; /*Animação na Seção Menu2 abaixo*/
+    animation-direction: reverse;
+}
+#ulMenu #txtBox{
+    min-width: 400px;
+    height: 36px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    color: white;
+}
+
+@media only screen and (max-width: 1000px){
+    .pesquisar{
+        padding: 20px;
+    }
+    #submitButton{
+        padding: 25px;
+        padding-bottom:50px;
+    }
+}
+
+
+/*Menu2*/
+#ulMenu2{
+    list-style: none;
+    line-height: 50px;
+    justify-content: center;
+    display: flex;
+    background-color: var(--blue1);
+}
+#ulMenu2 a {
+    margin: 0px;
+    width:20%;
+}
+#ulMenu2 a li{
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+#ulMenu2 a li:hover{
+    transition: 0.5s;
+    background-color: var(--bluelight);
+    text-decoration: line-through;
+    animation-name: buttonAnimation;
+    animation-duration: 1s;
+}
+@media only screen and (max-width: 1000px){
+    #ulMenu2 a li{
+        font-size: 1.1em;
+        text-align: left;
+        padding: 30px;
+        line-height: 70px;
+        margin: auto;
+    }
+}
+@keyframes buttonAnimation{
+    5%{
+        background:lightskyblue;
+    }
+    10%{
+        background:black;
+    }
+    20%{
+        background:white
+    }
+    40%{
+        background:lightskyblue;
+    }
+    100%{
+        background: var(--bluelight);
+    }
+}
+
+/*SemiFooter*/
+#semifooter{
+    background:var(--blue1);
+    display: flex;
+}
+#semifooter a{
+    color: white;
+    padding: 10px;
+    margin: auto;
+}
+#semifooter a:hover{
+    text-decoration: line-through;
+}
+
+/*Footer*/
+#footerdiv{
+    width: 100%;
+    height: 5%;
+    background: linear-gradient(var(--bluetitle), black);
+    position: absolute;
+}
+.footerList{
+    list-style: none;
+    margin: auto;
+    display:flex;
+    text-align: center;
+}
+.footerList .footerListLi{
+    margin: auto;
+    padding: 1%;
+}
+
+@media only screen and (max-width: 1000px){
+    #footerdiv{
+        height: 20%;
+    }
+    .footerList{
+        list-style: none;
+        margin: auto;
+        display:flex;
+        text-align: center;
+    }
+    .footerList .footerListLi{
+        margin: auto;
+        padding: 5%;
+    }
+}
